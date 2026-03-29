@@ -1,0 +1,26 @@
+# Xcode
+build/
+*.xcarchive
+*.ipa
+DerivedData/
+*.xcuserstate
+xcuserdata/
+
+# Provisioning Profiles
+*.mobileprovision
+*.p12
+*.cer
+
+# Icon iteration files
+caloriex_*.png
+fuelo_icon_preview.png
+fuelo_icon_1024.png
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# macOS
+.DS_Store
