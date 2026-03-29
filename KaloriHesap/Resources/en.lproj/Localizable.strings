@@ -1,0 +1,241 @@
+// MARK: - Navigation & Tabs
+"Kalori Takibi" = "Caloriex Fit";
+
+// MARK: - Onboarding welcome
+"Caloriex Fit'e\nHoşgeldiniz!" = "Welcome to\nCaloriex Fit!";
+"Günlük besin takibini kolaylaştırın,\nsağlıklı beslenme hedeflerinize ulaşın." = "Track calories & macros.\nFuel your best self.";
+"Geri" = "Back";
+"İleri" = "Next";
+"Başla" = "Get Started";
+"Adınız" = "Your Name";
+"Günlük Kalori Hedefiniz" = "Your Daily Calorie Goal";
+"yaş" = "yrs";
+"Günlük" = "Daily";
+"Ara" = "Search";
+"Özet" = "Summary";
+"Profil" = "Profile";
+
+// MARK: - Date
+"Bugün" = "Today";
+"Dün" = "Yesterday";
+
+// MARK: - Dashboard stats
+"Tüketilen" = "Consumed";
+"Hedef" = "Goal";
+"Kalan" = "Remaining";
+
+// MARK: - Meal types
+"Kahvaltı" = "Breakfast";
+"Öğle Yemeği" = "Lunch";
+"Akşam Yemeği" = "Dinner";
+"Atıştırma" = "Snacks";
+"Yemek Ekle" = "Add Food";
+
+// MARK: - Macros
+"Protein" = "Protein";
+"Karb" = "Carbs";
+"Yağ" = "Fat";
+"Kalori" = "Calories";
+
+// MARK: - Swipe actions & dialogs
+"Düzenle" = "Edit";
+"Sil" = "Delete";
+"Bu yemeği silmek istiyor musun?" = "Delete this food?";
+"İptal" = "Cancel";
+
+// MARK: - Water tracker
+"Su Takibi" = "Water Tracker";
+"kaldı" = "left";
+"Hedef tamamlandı 🎉" = "Goal completed! 🎉";
+"Ekle" = "Add";
+"Geri Al" = "Undo";
+"1 Bardak" = "1 Glass";
+"1.5 Bardak" = "1.5 Glasses";
+"2.5 bardak" = "2.5 glasses";
+"tümünü sil" = "clear all";
+"Sıfırla" = "Reset";
+"Her gün gece yarısı otomatik sıfırlanır" = "Resets automatically at midnight every day";
+"bardak" = "glasses";
+
+// MARK: - Edit food entry
+"Porsiyon" = "Portion";
+"Miktar" = "Amount";
+"Toplam" = "Total";
+"Kaydet" = "Save";
+
+// MARK: - Food search
+"Besin Ara" = "Search Food";
+"Tümü" = "All";
+"Öğün" = "Meal";
+
+// MARK: - Profile
+"Günlük Hedefler" = "Daily Goals";
+"Metabolizma" = "Metabolism";
+"BMR (Bazal)" = "BMR (Basal)";
+"Aktivite" = "Activity";
+"Bildirimler & Program" = "Notifications & Schedule";
+"Öğün Programı & Hatırlatmalar" = "Meal Schedule & Reminders";
+"Su Hatırlatması" = "Water Reminder";
+"Açık" = "On";
+"Kapalı" = "Off";
+"Uygulamayı Sıfırla" = "Reset App";
+"Profil, tüm günlük kayıtlar ve yemek verileri kalıcı olarak silinir." = "Profile, all daily logs and food data will be permanently deleted.";
+"Her şey silinecek. Emin misin?" = "Everything will be deleted. Are you sure?";
+"Tümünü Sil ve Sıfırla" = "Delete All & Reset";
+"Profil Bulunamadı" = "Profile Not Found";
+"Hatırlatma kapalı" = "Reminders off";
+
+// MARK: - Summary
+"Aylık Özet" = "Monthly Summary";
+"Veri Yönetimi" = "Data Management";
+"Tüm Verileri Sıfırla" = "Reset All Data";
+"Tüm kayıtlar silinecek. Emin misin?" = "All records will be deleted. Are you sure?";
+"Tümünü Sil" = "Delete All";
+"Genel Bakış" = "Overview";
+"Haftalık Dağılım" = "Weekly Breakdown";
+"Günlük Kayıtlar" = "Daily Records";
+"Bu Ayın Verilerini Sil" = "Delete This Month's Data";
+"Ort." = "Avg.";
+"ort." = "avg.";
+"gün" = "days";
+"En Yüksek" = "Highest";
+"En Düşük" = "Lowest";
+"Ort. Kalori" = "Avg. Calories";
+"Ort. Protein" = "Avg. Protein";
+"Ort. Karb" = "Avg. Carbs";
+"Ort. Yağ" = "Avg. Fat";
+"Henüz veri yok" = "No data yet";
+"Yemek eklemeye başlayınca burada göreceksin." = "Start adding food to see it here.";
+"Genel Bakış" = "Overview";
+"Hafta" = "Week";
+"gün kayıtlı" = "days logged";
+"yemek" = "items";
+
+// MARK: - Food categories (exact rawValues from FoodCategory enum)
+"Tahıllar & Ekmek" = "Grains & Bread";
+"Sebzeler" = "Vegetables";
+"Meyveler" = "Fruits";
+"Et & Tavuk & Balık" = "Meat, Poultry & Fish";
+"Süt Ürünleri & Yumurta" = "Dairy & Eggs";
+"Baklagiller" = "Legumes";
+"İçecekler" = "Beverages";
+"Tatlılar" = "Desserts";
+"Atıştırmalıklar & Kuruyemiş" = "Snacks & Nuts";
+"Kahvaltılık" = "Breakfast Items";
+"Yağ & Sos & Baharat" = "Oils, Sauces & Spices";
+"Hazır Yemek & Fast Food" = "Ready Meals & Fast Food";
+"Diğer" = "Other";
+
+// MARK: - Meal type rawValues (for search nav title and picker)
+"Atıştırmalık" = "Snacks";
+
+// MARK: - Food search misc
+"Kapat" = "Close";
+"Besin ara..." = "Search food...";
+"Sonuç Bulunamadı" = "No Results";
+
+// MARK: - WeightGoal rawValues
+"Kiloyu Koru" = "Maintain Weight";
+
+// MARK: - Meal schedule display names
+"Ara Öğün" = "Snack";
+"Sabah Ara Öğünü" = "Morning Snack";
+"Öğleden Sonra" = "Afternoon Snack";
+
+// MARK: - TwoMealCombo rawValues
+"Sabah + Öğle" = "Morning + Lunch";
+"Sabah + Akşam" = "Morning + Dinner";
+"Öğle + Akşam" = "Lunch + Dinner";
+
+// MARK: - Meal schedule settings view
+"Öğün Programı" = "Meal Schedule";
+"Günde Kaç Öğün Yiyorsun?" = "How Many Meals Per Day?";
+"Öğün Saatleri & Hatırlatmalar" = "Meal Times & Reminders";
+"Saat satırına dokun, ayarla ve Tamam'a bas. Hatırlatma toggle'ı ile bildirim aç." = "Tap a meal row to set the time, then enable reminders with the toggle.";
+"Hangi Öğünler?" = "Which Meals?";
+"Tamam" = "Done";
+"Hatırlatma: Açık" = "Reminder: On";
+"Hatırlatma: Kapalı" = "Reminder: Off";
+"Bildirim İzni Kapalı" = "Notifications Disabled";
+"Hatırlatma açmak için Ayarlar'dan izin ver." = "Allow notifications in Settings to enable reminders.";
+"Hatırlatmaları açmak için Ayarlar > KaloriHesap > Bildirimler kısmından izin ver." = "Go to Settings > NutriLog > Notifications to allow reminders.";
+"Ayarlar" = "Settings";
+
+// MARK: - Water reminder settings view
+"Günlük su hedefine ulaşman için seni hatırlatır. Her gün gece yarısında kayıt sıfırlanır." = "Reminds you to reach your daily water goal. Resets at midnight every day.";
+"Hatırlatma Sıklığı" = "Reminder Frequency";
+"Saat Aralığı" = "Time Range";
+"Hatırlatma Saati" = "Reminder Time";
+"Saat" = "Time";
+"Başlangıç" = "Start";
+"Bitiş" = "End";
+"Saat Başı" = "Every Hour";
+"Günde 1 Kez" = "Once a Day";
+"Seçtiğin saatler arasında her saat hatırlatır" = "Reminds you every hour between selected times";
+"Belirlediğin saatte bir kez hatırlatır" = "Reminds you once at the specified time";
+"hatırlatma" = "reminder";
+
+// MARK: - Activity level names & descriptions
+"Hafif Aktif" = "Lightly Active";
+"Aktif" = "Active";
+"Masa başı iş, spor yok" = "Desk job, no exercise";
+"Haftada 1–3 gün hafif egzersiz" = "Light exercise 1–3 days/week";
+"Haftada 3–5 gün orta egzersiz" = "Moderate exercise 3–5 days/week";
+"Haftada 6–7 gün yoğun egzersiz" = "Intense exercise 6–7 days/week";
+"Günde 2x antrenman veya ağır iş" = "2x daily training or heavy labor";
+
+// MARK: - Onboarding / Profile edit
+"Kişisel Bilgiler" = "Personal Info";
+"Vücut Ölçüleri" = "Body Measurements";
+"Hedefin Ne?" = "What's Your Goal?";
+"Ad" = "Name";
+"Yaş" = "Age";
+"Boy" = "Height";
+"Kilo" = "Weight";
+"Cinsiyet" = "Gender";
+"Erkek" = "Male";
+"Kadın" = "Female";
+"Aktivite Seviyesi" = "Activity Level";
+"Kilo Hedefi" = "Weight Goal";
+"Hareketsiz" = "Sedentary";
+"Az Aktif" = "Lightly Active";
+"Orta Aktif" = "Moderately Active";
+"Çok Aktif" = "Very Active";
+"Ekstra Aktif" = "Extra Active";
+"Kilo Ver" = "Lose Weight";
+"Kilonu Koru" = "Maintain Weight";
+"Kilo Al" = "Gain Weight";
+
+// MARK: - Notifications
+"hatırlatma açık" = "reminders on";
+"öğün" = "meals";
+
+// MARK: - Profile edit
+"İsimsiz" = "Unnamed";
+"Profili Düzenle" = "Edit Profile";
+"Yeni Günlük Kalori Hedefi" = "New Daily Calorie Goal";
+"Kişisel Bilgiler" = "Personal Info";
+"Vücut Ölçüleri" = "Body Measurements";
+"Cinsiyet" = "Gender";
+"Aktivite Seviyesi" = "Activity Level";
+
+// MARK: - Summary view
+"kcal / gün" = "kcal / day";
+"Tüm günlük kayıtlar ve yemek verileri kalıcı olarak silinir. Bu işlem geri alınamaz." = "All daily records and food data will be permanently deleted. This cannot be undone.";
+"Tüm veriler silinecek. Emin misin?" = "Delete all data? This cannot be undone.";
+"Özet" = "Summary";
+
+// MARK: - Add/Edit food
+"100g Besin Değerleri" = "Nutritional Values per 100g";
+"Karbonhidrat" = "Carbohydrates";
+"Lif" = "Fiber";
+"Porsiyon Seçin" = "Select Portion";
+"Porsiyon" = "Portion";
+
+// MARK: - Misc
+"kcal" = "kcal";
+"kcal/100g" = "kcal/100g";
+"Toplam: " = "Total: ";
+"Kaydet — " = "Save — ";
+"Ekle — " = "Add — ";
+"Yemek Ekle" = "Add Food";

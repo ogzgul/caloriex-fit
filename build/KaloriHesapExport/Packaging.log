@@ -1,0 +1,150 @@
+2026-03-29 13:39:02 +0000 [MT] Initial pipeline context: <IDEDistributionProcessingPipelineContext: 0xc379f2400; archive(resolved)="<IDEArchive: 0xc39cd74f0>", distributionTask(resolved)="2", distributionDestination(resolved)="1", distributionMethod(resolved)="<IDEDistributionMethodiOSAppStoreDistribution: 0xc395bbfc0>", team(resolved)="<IDEProvisioningBasicTeam: 0xc39de87c0; teamID='5PY8Q784PU', teamName='(null)'>">
+	Chain (15, self inclusive):
+	<IDEDistributionProcessingPipelineContext: 0xc379f2400; archive = "<IDEArchive: 0xc39cd74f0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xc395bbfc0>", team="<IDEProvisioningBasicTeam: 0xc39de87c0; teamID='5PY8Q784PU', teamName='(null)'>">
+	<IDEDistributionProcessingPipelineContext: 0xc379f2100; archive = "<IDEArchive: 0xc39cd74f0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xc395bbfc0>", team="<IDEProvisioningBasicTeam: 0xc39de87c0; teamID='5PY8Q784PU', teamName='(null)'>">
+	<IDEDistributionContext: 0xc39dcaf80; archive = "<IDEArchive: 0xc39cd74f0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xc395bbfc0>", team="<IDEProvisioningBasicTeam: 0xc39de87c0; teamID='5PY8Q784PU', teamName='(null)'>">
+	<IDEDistributionContext: 0xc39dcaa80; archive = "<IDEArchive: 0xc39cd74f0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xc395bbfc0>", team="<IDEProvisioningBasicTeam: 0xc39de87c0; teamID='5PY8Q784PU', teamName='(null)'>">
+	<IDEDistributionContext: 0xc39dca800; archive = "<IDEArchive: 0xc39cd74f0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xc395bbfc0>", team="<IDEProvisioningBasicTeam: 0xc39de87c0; teamID='5PY8Q784PU', teamName='(null)'>">
+	<IDEDistributionContext: 0xc39dca580; archive = "<IDEArchive: 0xc39cd74f0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xc395bbfc0>", team="<IDEProvisioningBasicTeam: 0xc39de87c0; teamID='5PY8Q784PU', teamName='(null)'>">
+	<IDEDistributionContext: 0xc39dca300; archive = "<IDEArchive: 0xc39cd74f0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xc395bbfc0>", team="<IDEProvisioningBasicTeam: 0xc39de87c0; teamID='5PY8Q784PU', teamName='(null)'>">
+	<IDEDistributionContext: 0xc39dca080; archive = "<IDEArchive: 0xc39cd74f0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xc395bbfc0>", team="<IDEProvisioningBasicTeam: 0xc39de87c0; teamID='5PY8Q784PU', teamName='(null)'>">
+	<IDEDistributionContext: 0xc39dc9e00; archive = "<IDEArchive: 0xc39cd74f0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xc395bbfc0>", team="<IDEProvisioningBasicTeam: 0xc39de87c0; teamID='5PY8Q784PU', teamName='(null)'>">
+	<IDEDistributionContext: 0xc39dc8a00; archive = "<IDEArchive: 0xc39cd74f0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xc395bbfc0>", team="<IDEProvisioningBasicTeam: 0xc39de87c0; teamID='5PY8Q784PU', teamName='(null)'>">
+	<IDEDistributionContext: 0xc39dc8780; archive = "<IDEArchive: 0xc39cd74f0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xc395bbfc0>", team="<IDEProvisioningBasicTeam: 0xc39de87c0; teamID='5PY8Q784PU', teamName='(null)'>">
+	<IDEDistributionContext: 0xc39dc8500; archive = "<IDEArchive: 0xc39cd74f0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xc395bbfc0>", team="<IDEProvisioningBasicTeam: 0xc39de87c0; teamID='5PY8Q784PU', teamName='(null)'>">
+	<IDEDistributionContext: 0xc39dc8280; archive = "<IDEArchive: 0xc39cd74f0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xc395bbfc0>", team="(null)">
+	<IDEDistributionContext: 0xc39dc8000; archive = "<IDEArchive: 0xc39cd74f0>", distributionMethod="<IDEDistributionMethodiOSAppStoreDistribution: 0xc395bbfc0>", team="(null)">
+	<IDEDistributionContext: 0x1029be630; archive = "<IDEArchive: 0xc39cd74f0>", distributionMethod="(null)", team="(null)">
+</IDEDistributionProcessingPipelineContext: 0xc379f2400>
+2026-03-29 13:39:02 +0000 [MT] Processing step: IDEDistributionCreateDestRootStep
+2026-03-29 13:39:02 +0000 [MT] Processing step: IDEDistributionCopyItemStep
+2026-03-29 13:39:02 +0000 [MT] Running /usr/bin/ditto '-V' '/Users/oguzgul/Desktop/KaloriHesap/build/KaloriHesap.xcarchive/Products/Applications/KaloriHesap.app' '/var/folders/dm/yw_1h0055px_lfxq_j4xs2680000gn/T/XcodeDistPipeline.~~~RbsxRX/Root/Payload/KaloriHesap.app'
+2026-03-29 13:39:02 +0000  >>> Copying /Users/oguzgul/Desktop/KaloriHesap/build/KaloriHesap.xcarchive/Products/Applications/KaloriHesap.app 
+2026-03-29 13:39:02 +0000  copying file ./_CodeSignature/CodeResources ... 
+2026-03-29 13:39:02 +0000  3477 bytes for ./_CodeSignature/CodeResources
+2026-03-29 13:39:02 +0000  copying file ./en.lproj/Localizable.strings ... 
+2026-03-29 13:39:02 +0000  9371 bytes for ./en.lproj/Localizable.strings
+2026-03-29 13:39:02 +0000  copying file ./AppIcon60x60@2x.png ... 
+2026-03-29 13:39:02 +0000  8586 bytes for ./AppIcon60x60@2x.png
+2026-03-29 13:39:02 +0000  copying file ./KaloriHesap ... 
+2026-03-29 13:39:02 +0000  1185392 bytes for ./KaloriHesap
+copying file ./Assets.car ... 
+2026-03-29 13:39:02 +0000  100600 bytes for ./Assets.car
+2026-03-29 13:39:02 +0000  copying file ./tr.lproj/Localizable.strings ... 
+2026-03-29 13:39:02 +0000  141 bytes for ./tr.lproj/Localizable.strings
+2026-03-29 13:39:02 +0000  copying file ./AppIcon76x76@2x~ipad.png ... 
+2026-03-29 13:39:02 +0000  11699 bytes for ./AppIcon76x76@2x~ipad.png
+2026-03-29 13:39:02 +0000  copying file ./embedded.mobileprovision ... 
+2026-03-29 13:39:02 +0000  12232 bytes for ./embedded.mobileprovision
+2026-03-29 13:39:02 +0000  copying file ./Info.plist ... 
+2026-03-29 13:39:02 +0000  1423 bytes for ./Info.plist
+2026-03-29 13:39:02 +0000  copying file ./PkgInfo ... 
+2026-03-29 13:39:02 +0000  8 bytes for ./PkgInfo
+2026-03-29 13:39:02 +0000 [MT] /usr/bin/ditto exited with 0
+2026-03-29 13:39:02 +0000 [MT] Processing step: IDEDistributionEmbedProfileStep
+2026-03-29 13:39:02 +0000 [MT] Processing step: IDEDistributionInfoPlistStep
+2026-03-29 13:39:02 +0000 [MT] Skipping setting DTXcodeBuildDistribution because toolsBuildVersionName was nil.
+2026-03-29 13:39:02 +0000 [MT] Processing step: IDEDistributionItemRemovalStep
+2026-03-29 13:39:02 +0000 [MT] Processing step: IDEDistributionAppThinningPlistStep
+2026-03-29 13:39:02 +0000 [MT] Skipping step: IDEDistributionAppThinningPlistStep because it said so
+2026-03-29 13:39:02 +0000 [MT] Processing step: IDEDistributionSymbolsStep
+2026-03-29 13:39:02 +0000 [MT] Writing /var/folders/dm/yw_1h0055px_lfxq_j4xs2680000gn/T/XcodeDistPipeline.~~~RbsxRX/Symbols/9C3F7DCF-C6E9-35B8-AECF-7C07FFE4FC50.symbols
+2026-03-29 13:39:02 +0000 [MT] Processing step: IDEDistributionCopyAppleProvidedContentStep
+2026-03-29 13:39:02 +0000 [MT] Processing step: IDEDistributionAppThinningStep
+2026-03-29 13:39:02 +0000 [MT] Skipping step: IDEDistributionAppThinningStep because it said so
+2026-03-29 13:39:02 +0000 [MT] Processing step: IDEDistributionArchThinningStep
+2026-03-29 13:39:02 +0000 [MT] Archs to thin for item /Users/oguzgul/Desktop/KaloriHesap/build/KaloriHesap.xcarchive/Products/Applications/KaloriHesap.app are []
+2026-03-29 13:39:02 +0000 [MT] Processing step: IDEDistributionODRStep
+2026-03-29 13:39:02 +0000 [MT] Processing step: IDEDistributionStripXattrsStep
+2026-03-29 13:39:02 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-03-29 13:39:02 +0000 [MT] Processing step: IDEDistributionCodesignStep
+2026-03-29 13:39:02 +0000 [MT] Entitlements for <IDEDistributionItem: 0xc39d75920; bundleID='com.ogzgul.caloriex', path='<DVTFilePath:0xc39d1bb40:'/Users/oguzgul/Desktop/KaloriHesap/build/KaloriHesap.xcarchive/Products/Applications/KaloriHesap.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xc39d74ea0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xc39c6e580; name='Apple Distribution: Oğuz GÜL (5PY8Q784PU)', hash='2BECE48D54D88C88A4F8285431FA49CBAB5908B0', serialNumber='6F68290AC3665F338FB7E2DA7EA27089', certificateKinds='(
+    "1.2.840.113635.100.6.1.7",
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-02-23 08:27:47 +0000''>', entitlements='{
+    "application-identifier" = "5PY8Q784PU.com.ogzgul.caloriex";
+    "beta-reports-active" = 1;
+    "com.apple.developer.team-identifier" = 5PY8Q784PU;
+    "get-task-allow" = 0;
+}', teamID='5PY8Q784PU', identifier='com.ogzgul.caloriex', executablePath='<DVTFilePath:0xc39d74de0:'/Users/oguzgul/Desktop/KaloriHesap/build/KaloriHesap.xcarchive/Products/Applications/KaloriHesap.app/KaloriHesap'>', hardenedRuntime='0'>'>: {
+    "application-identifier" = "5PY8Q784PU.com.ogzgul.caloriex";
+    "beta-reports-active" = 1;
+    "com.apple.developer.team-identifier" = 5PY8Q784PU;
+    "get-task-allow" = 0;
+}
+2026-03-29 13:39:02 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-03-29 13:39:02 +0000 [MT] Entitlements for <IDEDistributionItem: 0xc39d75920; bundleID='com.ogzgul.caloriex', path='<DVTFilePath:0xc39d1bb40:'/Users/oguzgul/Desktop/KaloriHesap/build/KaloriHesap.xcarchive/Products/Applications/KaloriHesap.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xc39d74ea0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xc39c6e700; name='Apple Distribution: Oğuz GÜL (5PY8Q784PU)', hash='2BECE48D54D88C88A4F8285431FA49CBAB5908B0', serialNumber='6F68290AC3665F338FB7E2DA7EA27089', certificateKinds='(
+    "1.2.840.113635.100.6.1.7",
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-02-23 08:27:47 +0000''>', entitlements='{
+    "application-identifier" = "5PY8Q784PU.com.ogzgul.caloriex";
+    "beta-reports-active" = 1;
+    "com.apple.developer.team-identifier" = 5PY8Q784PU;
+    "get-task-allow" = 0;
+}', teamID='5PY8Q784PU', identifier='com.ogzgul.caloriex', executablePath='<DVTFilePath:0xc39d74de0:'/Users/oguzgul/Desktop/KaloriHesap/build/KaloriHesap.xcarchive/Products/Applications/KaloriHesap.app/KaloriHesap'>', hardenedRuntime='0'>'> are: {
+    "application-identifier" = "5PY8Q784PU.com.ogzgul.caloriex";
+    "beta-reports-active" = 1;
+    "com.apple.developer.team-identifier" = 5PY8Q784PU;
+    "get-task-allow" = 0;
+}
+2026-03-29 13:39:02 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0xc39d75920; bundleID='com.ogzgul.caloriex', path='<DVTFilePath:0xc39d1bb40:'/Users/oguzgul/Desktop/KaloriHesap/build/KaloriHesap.xcarchive/Products/Applications/KaloriHesap.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0xc39d74ea0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0xc39c6e700; name='Apple Distribution: Oğuz GÜL (5PY8Q784PU)', hash='2BECE48D54D88C88A4F8285431FA49CBAB5908B0', serialNumber='6F68290AC3665F338FB7E2DA7EA27089', certificateKinds='(
+    "1.2.840.113635.100.6.1.7",
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2026-02-23 08:27:47 +0000''>', entitlements='{
+    "application-identifier" = "5PY8Q784PU.com.ogzgul.caloriex";
+    "beta-reports-active" = 1;
+    "com.apple.developer.team-identifier" = 5PY8Q784PU;
+    "get-task-allow" = 0;
+}', teamID='5PY8Q784PU', identifier='com.ogzgul.caloriex', executablePath='<DVTFilePath:0xc39d74de0:'/Users/oguzgul/Desktop/KaloriHesap/build/KaloriHesap.xcarchive/Products/Applications/KaloriHesap.app/KaloriHesap'>', hardenedRuntime='0'>'> to: /var/folders/dm/yw_1h0055px_lfxq_j4xs2680000gn/T/XcodeDistPipeline.~~~RbsxRX/entitlements~~~DJf74z
+2026-03-29 13:39:02 +0000 [MT] invoking codesign: <NSConcreteTask: 0xc3a0cb4d0; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    2BECE48D54D88C88A4F8285431FA49CBAB5908B0,
+    "--entitlements",
+    "/var/folders/dm/yw_1h0055px_lfxq_j4xs2680000gn/T/XcodeDistPipeline.~~~RbsxRX/entitlements~~~DJf74z",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/dm/yw_1h0055px_lfxq_j4xs2680000gn/T/XcodeDistPipeline.~~~RbsxRX/Root/Payload/KaloriHesap.app"
+)'>
+2026-03-29 13:39:02 +0000 [MT] codesign output: /var/folders/dm/yw_1h0055px_lfxq_j4xs2680000gn/T/XcodeDistPipeline.~~~RbsxRX/Root/Payload/KaloriHesap.app: replacing existing signature
+/var/folders/dm/yw_1h0055px_lfxq_j4xs2680000gn/T/XcodeDistPipeline.~~~RbsxRX/Root/Payload/KaloriHesap.app: signed app bundle with Mach-O thin (arm64) [com.ogzgul.caloriex]
+2026-03-29 13:39:02 +0000 [MT] Processing step: IDEDistributionZipODRItemStep
+2026-03-29 13:39:02 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-03-29 13:39:02 +0000 [MT] Processing step: IDEDistributionCreateIPAStep
+2026-03-29 13:39:02 +0000 [MT] Running /usr/bin/rsync '-8aPhhE' '/var/folders/dm/yw_1h0055px_lfxq_j4xs2680000gn/T/XcodeDistPipeline.~~~RbsxRX/Symbols' '--link-dest' '/var/folders/dm/yw_1h0055px_lfxq_j4xs2680000gn/T/XcodeDistPipeline.~~~RbsxRX' '/var/folders/dm/yw_1h0055px_lfxq_j4xs2680000gn/T/XcodeDistPipeline.~~~RbsxRX/Root'
+2026-03-29 13:39:02 +0000  Symbols/
+Symbols/9C3F7DCF-C6E9-35B8-AECF-7C07FFE4FC50.symbols
+2026-03-29 13:39:02 +0000 [MT] /usr/bin/rsync exited with 0
+2026-03-29 13:39:02 +0000 [MT] Running /usr/bin/ditto '-V' '-c' '-k' '--norsrc' '/var/folders/dm/yw_1h0055px_lfxq_j4xs2680000gn/T/XcodeDistPipeline.~~~RbsxRX/Root' '/var/folders/dm/yw_1h0055px_lfxq_j4xs2680000gn/T/XcodeDistPipeline.~~~RbsxRX/Packages/KaloriHesap.ipa'
+2026-03-29 13:39:02 +0000  >>> Copying /var/folders/dm/yw_1h0055px_lfxq_j4xs2680000gn/T/XcodeDistPipeline.~~~RbsxRX/Root 
+2026-03-29 13:39:02 +0000  copying file ./Payload/KaloriHesap.app/_CodeSignature/CodeResources ... 
+2026-03-29 13:39:02 +0000  3477 bytes for ./Payload/KaloriHesap.app/_CodeSignature/CodeResources
+2026-03-29 13:39:02 +0000  copying file ./Payload/KaloriHesap.app/en.lproj/Localizable.strings ... 
+2026-03-29 13:39:02 +0000  9371 bytes for ./Payload/KaloriHesap.app/en.lproj/Localizable.strings
+2026-03-29 13:39:02 +0000  copying file ./Payload/KaloriHesap.app/AppIcon60x60@2x.png ... 
+2026-03-29 13:39:02 +0000  8586 bytes for ./Payload/KaloriHesap.app/AppIcon60x60@2x.png
+2026-03-29 13:39:02 +0000  copying file ./Payload/KaloriHesap.app/KaloriHesap ... 
+2026-03-29 13:39:02 +0000  1185392 bytes for ./Payload/KaloriHesap.app/KaloriHesap
+2026-03-29 13:39:02 +0000  copying file ./Payload/KaloriHesap.app/Assets.car ... 
+2026-03-29 13:39:02 +0000  100600 bytes for ./Payload/KaloriHesap.app/Assets.car
+2026-03-29 13:39:02 +0000  copying file ./Payload/KaloriHesap.app/tr.lproj/Localizable.strings ... 
+2026-03-29 13:39:02 +0000  141 bytes for ./Payload/KaloriHesap.app/tr.lproj/Localizable.strings
+2026-03-29 13:39:02 +0000  copying file ./Payload/KaloriHesap.app/AppIcon76x76@2x~ipad.png ... 
+2026-03-29 13:39:02 +0000  11699 bytes for ./Payload/KaloriHesap.app/AppIcon76x76@2x~ipad.png
+2026-03-29 13:39:02 +0000  copying file ./Payload/KaloriHesap.app/embedded.mobileprovision ... 
+2026-03-29 13:39:02 +0000  12232 bytes for ./Payload/KaloriHesap.app/embedded.mobileprovision
+2026-03-29 13:39:02 +0000  copying file ./Payload/KaloriHesap.app/Info.plist ... 
+2026-03-29 13:39:02 +0000  1423 bytes for ./Payload/KaloriHesap.app/Info.plist
+2026-03-29 13:39:02 +0000  copying file ./Payload/KaloriHesap.app/PkgInfo ... 
+2026-03-29 13:39:02 +0000  8 bytes for ./Payload/KaloriHesap.app/PkgInfo
+2026-03-29 13:39:02 +0000  copying file ./Symbols/9C3F7DCF-C6E9-35B8-AECF-7C07FFE4FC50.symbols ... 
+2026-03-29 13:39:02 +0000  3441108 bytes for ./Symbols/9C3F7DCF-C6E9-35B8-AECF-7C07FFE4FC50.symbols
+2026-03-29 13:39:02 +0000 [MT] /usr/bin/ditto exited with 0
+2026-03-29 13:39:02 +0000 [MT] Processing step: IDEDistributionAppStoreInformationStep
+2026-03-29 13:39:02 +0000 [MT] Skipping step: IDEDistributionAppStoreInformationStep because it said so
+2026-03-29 13:39:02 +0000 [MT] Processing step: IDEDistributionGenerateProcessedDistributionItems
+2026-03-29 13:39:02 +0000 [MT] IDEDistributionItem init <DVTFilePath:0xc39f15200:'/var/folders/dm/yw_1h0055px_lfxq_j4xs2680000gn/T/XcodeDistPipeline.~~~RbsxRX/Root/Payload/KaloriHesap.app'>
+2026-03-29 13:39:02 +0000 [MT] Processing step: IDEDistributionCreateManifestStep
+2026-03-29 13:39:02 +0000 [MT] Skipping step: IDEDistributionCreateManifestStep because it said so
