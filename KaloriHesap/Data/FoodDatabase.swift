@@ -11,10 +11,10 @@ struct FoodDatabase {
     }
 
     func search(_ query: String) -> [FoodItem] {
-        guard !query.isEmpty else { return items }
-        let q = query.lowercased(with: Locale(identifier: "tr_TR"))
+        let q = Self.normalizedSearchText(query)
+        guard !q.isEmpty else { return items }
         return items.filter {
-            $0.name.lowercased(with: Locale(identifier: "tr_TR")).contains(q)
+            Self.normalizedSearchText($0.name).contains(q)
         }
     }
 
@@ -47,6 +47,30 @@ struct FoodDatabase {
         list += ekstraTurkYemekleri()
         list += internationalFoods()
         return list
+    }
+
+    private static func normalizedSearchText(_ text: String) -> String {
+        var normalized = text
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .lowercased(with: Locale(identifier: "tr_TR"))
+
+        let replacements = [
+            "ı": "i",
+            "ğ": "g",
+            "ü": "u",
+            "ş": "s",
+            "ö": "o",
+            "ç": "c"
+        ]
+
+        for (source, target) in replacements {
+            normalized = normalized.replacingOccurrences(of: source, with: target)
+        }
+
+        return normalized.folding(
+            options: [.diacriticInsensitive, .widthInsensitive],
+            locale: Locale(identifier: "tr_TR")
+        )
     }
 
     // MARK: - TAHILLAR & EKMEK
@@ -485,6 +509,13 @@ struct FoodDatabase {
                 Portion(unit: .ml, gramsEquivalent: 1, label: "1 ml"),
                 Portion(unit: .bardak, gramsEquivalent: 240, label: "1 Bardak (240 ml)")
             ]),
+        FoodItem(name: "Laktozsuz Süt", category: .sut,
+            caloriesPer100g: 47, proteinPer100g: 3.3, carbsPer100g: 5.0, fatPer100g: 1.5, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .ml, gramsEquivalent: 1, label: "1 ml"),
+                Portion(unit: .bardak, gramsEquivalent: 200, label: "1 Su Bardağı (200 ml)"),
+                Portion(unit: .adet, gramsEquivalent: 250, label: "1 Kutu (250 ml)")
+            ]),
         FoodItem(name: "Yoğurt (Tam Yağlı)", category: .sut,
             caloriesPer100g: 61, proteinPer100g: 3.5, carbsPer100g: 4.7, fatPer100g: 3.3, fiberPer100g: 0,
             availablePortions: [
@@ -497,6 +528,34 @@ struct FoodDatabase {
             caloriesPer100g: 36, proteinPer100g: 3.5, carbsPer100g: 4.9, fatPer100g: 0.2, fiberPer100g: 0,
             availablePortions: [
                 Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .kase, gramsEquivalent: 200, label: "1 Kase (200 g)")
+            ]),
+        FoodItem(name: "Probiyotik Yoğurt", category: .sut,
+            caloriesPer100g: 62, proteinPer100g: 3.9, carbsPer100g: 5.0, fatPer100g: 3.1, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .adet, gramsEquivalent: 125, label: "1 Küçük Kap (125 g)"),
+                Portion(unit: .kase, gramsEquivalent: 180, label: "1 Kase (180 g)")
+            ]),
+        FoodItem(name: "Laktozsuz Yoğurt", category: .sut,
+            caloriesPer100g: 58, proteinPer100g: 3.8, carbsPer100g: 4.8, fatPer100g: 3.0, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 15, label: "1 Yemek Kaşığı (15 g)"),
+                Portion(unit: .kase, gramsEquivalent: 180, label: "1 Kase (180 g)")
+            ]),
+        FoodItem(name: "Protein Yoğurt", category: .sut,
+            caloriesPer100g: 76, proteinPer100g: 10.0, carbsPer100g: 4.7, fatPer100g: 1.5, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .adet, gramsEquivalent: 160, label: "1 Kap (160 g)"),
+                Portion(unit: .kase, gramsEquivalent: 200, label: "1 Kase (200 g)")
+            ]),
+        FoodItem(name: "Skyr", category: .sut,
+            caloriesPer100g: 63, proteinPer100g: 11.0, carbsPer100g: 3.9, fatPer100g: 0.2, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .adet, gramsEquivalent: 170, label: "1 Kap (170 g)"),
                 Portion(unit: .kase, gramsEquivalent: 200, label: "1 Kase (200 g)")
             ]),
         FoodItem(name: "Beyaz Peynir", category: .sut,
@@ -571,12 +630,61 @@ struct FoodDatabase {
                 Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
                 Portion(unit: .yemekKasigi, gramsEquivalent: 15, label: "1 Yemek Kaşığı (15 g)")
             ]),
+        FoodItem(name: "Taze Kaşar Peyniri", category: .sut,
+            caloriesPer100g: 356, proteinPer100g: 25.0, carbsPer100g: 2.0, fatPer100g: 27.0, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .dilim, gramsEquivalent: 30, label: "1 Dilim (30 g)"),
+                Portion(unit: .porsiyon, gramsEquivalent: 60, label: "1 Porsiyon (60 g)")
+            ]),
         FoodItem(name: "Ayran", category: .sut,
             caloriesPer100g: 30, proteinPer100g: 1.8, carbsPer100g: 3.0, fatPer100g: 1.1, fiberPer100g: 0,
             availablePortions: [
                 Portion(unit: .ml, gramsEquivalent: 1, label: "1 ml"),
                 Portion(unit: .bardak, gramsEquivalent: 200, label: "1 Su Bardağı (200 ml)"),
                 Portion(unit: .adet, gramsEquivalent: 250, label: "1 Kutu (250 ml)")
+            ]),
+        FoodItem(name: "Keçi Sütü", category: .sut,
+            caloriesPer100g: 69, proteinPer100g: 3.6, carbsPer100g: 4.5, fatPer100g: 4.1, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .ml, gramsEquivalent: 1, label: "1 ml"),
+                Portion(unit: .bardak, gramsEquivalent: 240, label: "1 Bardak (240 ml)")
+            ]),
+        FoodItem(name: "Badem Sütü (Şekersiz)", category: .sut,
+            caloriesPer100g: 15, proteinPer100g: 0.5, carbsPer100g: 0.5, fatPer100g: 1.2, fiberPer100g: 0.3,
+            availablePortions: [
+                Portion(unit: .ml, gramsEquivalent: 1, label: "1 ml"),
+                Portion(unit: .bardak, gramsEquivalent: 240, label: "1 Bardak (240 ml)")
+            ]),
+        FoodItem(name: "Yulaf Sütü", category: .sut,
+            caloriesPer100g: 47, proteinPer100g: 1.0, carbsPer100g: 8.0, fatPer100g: 1.5, fiberPer100g: 0.8,
+            availablePortions: [
+                Portion(unit: .ml, gramsEquivalent: 1, label: "1 ml"),
+                Portion(unit: .bardak, gramsEquivalent: 240, label: "1 Bardak (240 ml)")
+            ]),
+        FoodItem(name: "Soya Sütü", category: .sut,
+            caloriesPer100g: 33, proteinPer100g: 2.9, carbsPer100g: 1.8, fatPer100g: 1.8, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .ml, gramsEquivalent: 1, label: "1 ml"),
+                Portion(unit: .bardak, gramsEquivalent: 240, label: "1 Bardak (240 ml)")
+            ]),
+        FoodItem(name: "Hindistan Cevizi Sütü (İçecek)", category: .sut,
+            caloriesPer100g: 22, proteinPer100g: 0.2, carbsPer100g: 2.8, fatPer100g: 1.0, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .ml, gramsEquivalent: 1, label: "1 ml"),
+                Portion(unit: .bardak, gramsEquivalent: 240, label: "1 Bardak (240 ml)")
+            ]),
+        FoodItem(name: "Labne Peyniri", category: .sut,
+            caloriesPer100g: 170, proteinPer100g: 7.0, carbsPer100g: 4.0, fatPer100g: 14.0, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 20, label: "1 Yemek Kaşığı (20 g)")
+            ]),
+        FoodItem(name: "Provolone Peyniri", category: .sut,
+            caloriesPer100g: 352, proteinPer100g: 25.6, carbsPer100g: 2.1, fatPer100g: 26.6, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .dilim, gramsEquivalent: 28, label: "1 Dilim (28 g)")
             ]),
     ]}
 
@@ -693,6 +801,45 @@ struct FoodDatabase {
             availablePortions: [
                 Portion(unit: .ml, gramsEquivalent: 1, label: "1 ml"),
                 Portion(unit: .bardak, gramsEquivalent: 300, label: "1 Bardak (300 ml)")
+            ]),
+        FoodItem(name: "Kombucha", category: .icecek,
+            caloriesPer100g: 13, proteinPer100g: 0, carbsPer100g: 3.0, fatPer100g: 0, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .ml, gramsEquivalent: 1, label: "1 ml"),
+                Portion(unit: .adet, gramsEquivalent: 330, label: "1 Şişe (330 ml)"),
+                Portion(unit: .adet, gramsEquivalent: 480, label: "1 Büyük Şişe (480 ml)")
+            ]),
+        FoodItem(name: "Probiyotik İçecek (Yakult tarzı)", category: .icecek,
+            caloriesPer100g: 70, proteinPer100g: 1.2, carbsPer100g: 15.7, fatPer100g: 0, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .ml, gramsEquivalent: 1, label: "1 ml"),
+                Portion(unit: .adet, gramsEquivalent: 65, label: "1 Şişecik (65 ml)")
+            ]),
+        FoodItem(name: "Bitki Çayı (Şekersiz)", category: .icecek,
+            caloriesPer100g: 1, proteinPer100g: 0, carbsPer100g: 0.2, fatPer100g: 0, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .ml, gramsEquivalent: 1, label: "1 ml"),
+                Portion(unit: .bardak, gramsEquivalent: 200, label: "1 Bardak (200 ml)")
+            ]),
+        FoodItem(name: "Hindistan Cevizi Suyu", category: .icecek,
+            caloriesPer100g: 19, proteinPer100g: 0.7, carbsPer100g: 3.7, fatPer100g: 0.2, fiberPer100g: 1.1,
+            availablePortions: [
+                Portion(unit: .ml, gramsEquivalent: 1, label: "1 ml"),
+                Portion(unit: .adet, gramsEquivalent: 250, label: "1 Kutu (250 ml)"),
+                Portion(unit: .bardak, gramsEquivalent: 240, label: "1 Bardak (240 ml)")
+            ]),
+        FoodItem(name: "Maden Suyu (Sade)", category: .icecek,
+            caloriesPer100g: 0, proteinPer100g: 0, carbsPer100g: 0, fatPer100g: 0, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .ml, gramsEquivalent: 1, label: "1 ml"),
+                Portion(unit: .adet, gramsEquivalent: 200, label: "1 Şişe (200 ml)"),
+                Portion(unit: .adet, gramsEquivalent: 500, label: "1 Büyük Şişe (500 ml)")
+            ]),
+        FoodItem(name: "Taze Meyve Suyu (Karışık)", category: .icecek,
+            caloriesPer100g: 48, proteinPer100g: 0.5, carbsPer100g: 11.0, fatPer100g: 0.1, fiberPer100g: 0.3,
+            availablePortions: [
+                Portion(unit: .ml, gramsEquivalent: 1, label: "1 ml"),
+                Portion(unit: .bardak, gramsEquivalent: 240, label: "1 Bardak (240 ml)")
             ]),
     ]}
 
@@ -1222,6 +1369,102 @@ struct FoodDatabase {
             availablePortions: [
                 Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
                 Portion(unit: .adet, gramsEquivalent: 9, label: "1 Adet (9 g)")
+            ]),
+        FoodItem(name: "Chia Tohumu", category: .atistirmalik,
+            caloriesPer100g: 486, proteinPer100g: 16.5, carbsPer100g: 42.1, fatPer100g: 30.7, fiberPer100g: 34.4,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .cayKasigi, gramsEquivalent: 5, label: "1 Çay Kaşığı (5 g)"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 12, label: "1 Yemek Kaşığı (12 g)")
+            ]),
+        FoodItem(name: "Keten Tohumu", category: .atistirmalik,
+            caloriesPer100g: 534, proteinPer100g: 18.3, carbsPer100g: 28.9, fatPer100g: 42.2, fiberPer100g: 27.3,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .cayKasigi, gramsEquivalent: 5, label: "1 Çay Kaşığı (5 g)"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 10, label: "1 Yemek Kaşığı (10 g)")
+            ]),
+        FoodItem(name: "Susam", category: .atistirmalik,
+            caloriesPer100g: 573, proteinPer100g: 17.7, carbsPer100g: 23.5, fatPer100g: 49.7, fiberPer100g: 11.8,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .cayKasigi, gramsEquivalent: 5, label: "1 Çay Kaşığı (5 g)"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 10, label: "1 Yemek Kaşığı (10 g)")
+            ]),
+        FoodItem(name: "Spirulina Tozu", category: .atistirmalik,
+            caloriesPer100g: 290, proteinPer100g: 57.5, carbsPer100g: 23.9, fatPer100g: 7.7, fiberPer100g: 3.6,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .cayKasigi, gramsEquivalent: 3, label: "1 Çay Kaşığı (3 g)"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 7, label: "1 Yemek Kaşığı (7 g)")
+            ]),
+        FoodItem(name: "Whey Protein Tozu", category: .atistirmalik,
+            caloriesPer100g: 380, proteinPer100g: 74.0, carbsPer100g: 10.0, fatPer100g: 6.0, fiberPer100g: 1.0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .porsiyon, gramsEquivalent: 30, label: "1 Ölçek (30 g)"),
+                Portion(unit: .porsiyon, gramsEquivalent: 35, label: "1 Büyük Ölçek (35 g)")
+            ]),
+        FoodItem(name: "Hindistan Cevizi Yağı", category: .atistirmalik,
+            caloriesPer100g: 862, proteinPer100g: 0, carbsPer100g: 0, fatPer100g: 100.0, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .cayKasigi, gramsEquivalent: 5, label: "1 Çay Kaşığı (5 g)"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 14, label: "1 Yemek Kaşığı (14 g)")
+            ]),
+        FoodItem(name: "Kaju Fıstığı", category: .atistirmalik,
+            caloriesPer100g: 553, proteinPer100g: 18.2, carbsPer100g: 30.2, fatPer100g: 43.9, fiberPer100g: 3.3,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .adet, gramsEquivalent: 2, label: "1 Adet (~2 g)"),
+                Portion(unit: .porsiyon, gramsEquivalent: 28, label: "1 Avuç (28 g)")
+            ]),
+        FoodItem(name: "Macadamia Fıstığı", category: .atistirmalik,
+            caloriesPer100g: 718, proteinPer100g: 7.9, carbsPer100g: 13.8, fatPer100g: 75.8, fiberPer100g: 8.6,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .porsiyon, gramsEquivalent: 28, label: "1 Avuç (28 g)")
+            ]),
+        FoodItem(name: "Muz Cipsi", category: .atistirmalik,
+            caloriesPer100g: 519, proteinPer100g: 2.3, carbsPer100g: 58.4, fatPer100g: 33.6, fiberPer100g: 7.7,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .porsiyon, gramsEquivalent: 30, label: "1 Avuç (30 g)")
+            ]),
+        FoodItem(name: "Kuru İncir", category: .atistirmalik,
+            caloriesPer100g: 249, proteinPer100g: 3.3, carbsPer100g: 63.9, fatPer100g: 0.9, fiberPer100g: 9.8,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .adet, gramsEquivalent: 20, label: "1 Adet (20 g)"),
+                Portion(unit: .porsiyon, gramsEquivalent: 50, label: "1 Porsiyon (50 g)")
+            ]),
+        FoodItem(name: "Kuru Kayısı", category: .atistirmalik,
+            caloriesPer100g: 241, proteinPer100g: 3.4, carbsPer100g: 62.6, fatPer100g: 0.5, fiberPer100g: 7.3,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .adet, gramsEquivalent: 9, label: "1 Adet (9 g)"),
+                Portion(unit: .porsiyon, gramsEquivalent: 40, label: "1 Porsiyon (40 g)")
+            ]),
+        FoodItem(name: "Yerfıstığı (Kavrulmuş)", category: .atistirmalik,
+            caloriesPer100g: 587, proteinPer100g: 25.8, carbsPer100g: 21.5, fatPer100g: 49.7, fiberPer100g: 8.5,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 15, label: "1 Yemek Kaşığı (15 g)"),
+                Portion(unit: .porsiyon, gramsEquivalent: 28, label: "1 Avuç (28 g)")
+            ]),
+        FoodItem(name: "Fıstık Ezmesi", category: .atistirmalik,
+            caloriesPer100g: 588, proteinPer100g: 25.1, carbsPer100g: 20.1, fatPer100g: 49.9, fiberPer100g: 6.0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .cayKasigi, gramsEquivalent: 8, label: "1 Çay Kaşığı (8 g)"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 16, label: "1 Yemek Kaşığı (16 g)")
+            ]),
+        FoodItem(name: "Tahin", category: .atistirmalik,
+            caloriesPer100g: 595, proteinPer100g: 17.0, carbsPer100g: 21.2, fatPer100g: 53.8, fiberPer100g: 9.3,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .cayKasigi, gramsEquivalent: 8, label: "1 Çay Kaşığı (8 g)"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 16, label: "1 Yemek Kaşığı (16 g)")
             ]),
     ]}
 

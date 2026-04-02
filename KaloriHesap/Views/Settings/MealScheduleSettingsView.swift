@@ -116,7 +116,7 @@ struct MealScheduleSettingsView: View {
         }
         .navigationTitle("Öğün Programı")
         .navigationBarTitleDisplayMode(.inline)
-        .onAppear { checkPermission() }
+        .onAppear { refreshFromStorage() }
     }
 
     // MARK: - Helpers
@@ -125,24 +125,40 @@ struct MealScheduleSettingsView: View {
         MealReminderService.schedule(settings: settings)
     }
 
+    private func refreshFromStorage() {
+        settings = MealScheduleSettings.load()
+        if let expandedEntryID, !settings.entries.contains(where: { $0.id == expandedEntryID }) {
+            self.expandedEntryID = nil
+        }
+        checkPermission()
+    }
+
     private func checkPermission() {
         WaterReminderService.checkPermission { permissionStatus = $0 }
     }
 
     private func handleReminderToggle(entryID: String) {
-        guard let idx = settings.entries.firstIndex(where: { $0.id == entryID }) else { return }
-        guard settings.entries[idx].reminderEnabled else { save(); return }
+        // Hemen kaydet — kullanıcı geri gitmeden önce UserDefaults'a yaz
+        save()
+        guard let entry = settings.entries.first(where: { $0.id == entryID }) else { return }
+        guard entry.reminderEnabled else { return }
 
-        if permissionStatus == .authorized {
-            save()
+        if permissionStatus.allowsScheduling {
+            // Zaten kaydedildi
         } else if permissionStatus == .notDetermined {
             WaterReminderService.requestPermission { granted in
                 permissionStatus = granted ? .authorized : .denied
-                if !granted { settings.entries[idx].reminderEnabled = false }
+                if !granted,
+                   let idx = settings.entries.firstIndex(where: { $0.id == entryID }) {
+                    settings.entries[idx].reminderEnabled = false
+                }
                 save()
             }
         } else {
-            settings.entries[idx].reminderEnabled = false
+            if let idx = settings.entries.firstIndex(where: { $0.id == entryID }) {
+                settings.entries[idx].reminderEnabled = false
+            }
+            save()
         }
     }
 }

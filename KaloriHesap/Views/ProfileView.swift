@@ -7,6 +7,8 @@ struct ProfileView: View {
     @Environment(\.modelContext) private var modelContext
     @State private var showEdit = false
     @State private var showResetConfirm = false
+    @State private var waterEnabled = WaterReminderSettings.load().isEnabled
+    @State private var mealSettings = MealScheduleSettings.load()
 
     private var profile: UserProfile? { profiles.first }
 
@@ -68,11 +70,10 @@ struct ProfileView: View {
                             Label {
                                 VStack(alignment: .leading, spacing: 2) {
                                     Text("Öğün Programı & Hatırlatmalar")
-                                    let ms = MealScheduleSettings.load()
-                                    let activeReminders = ms.entries.filter { $0.reminderEnabled }.count
+                                    let activeReminders = mealSettings.entries.filter { $0.reminderEnabled }.count
                                     Text(activeReminders > 0
-                                         ? "\(ms.mealCount) \(String(localized: "öğün")) · \(activeReminders) \(String(localized: "hatırlatma açık"))"
-                                         : "\(ms.mealCount) \(String(localized: "öğün")) · \(String(localized: "Hatırlatma kapalı"))")
+                                         ? "\(mealSettings.mealCount) \(String(localized: "öğün")) · \(activeReminders) \(String(localized: "hatırlatma açık"))"
+                                         : "\(mealSettings.mealCount) \(String(localized: "öğün")) · \(String(localized: "Hatırlatma kapalı"))")
                                         .font(.caption).foregroundStyle(.secondary)
                                 }
                             } icon: {
@@ -88,7 +89,7 @@ struct ProfileView: View {
                             Label {
                                 VStack(alignment: .leading, spacing: 2) {
                                     Text("Su Hatırlatması")
-                                    Text(WaterReminderSettings.load().isEnabled ? "Açık" : "Kapalı" as LocalizedStringKey)
+                                    Text(waterEnabled ? "Açık" : "Kapalı")
                                         .font(.caption).foregroundStyle(.secondary)
                                 }
                             } icon: {
@@ -121,6 +122,10 @@ struct ProfileView: View {
                     Button("İptal", role: .cancel) {}
                 }
                 .navigationTitle("Profil")
+                .onAppear {
+                    waterEnabled = WaterReminderSettings.load().isEnabled
+                    mealSettings = MealScheduleSettings.load()
+                }
                 .sheet(isPresented: $showEdit) {
                     ProfileEditView(profile: p)
                 }

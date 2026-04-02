@@ -22,6 +22,8 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Barkod taramak için kameraya erişim gereklidir.</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Günlük adım sayınızı ve yaktığınız kaloriyi takip etmek için hareket sensörüne erişim gereklidir.</string>
 	<key>NSUserNotificationUsageDescription</key>
 	<string>Su içme hatırlatmaları için bildirim izni gereklidir.</string>
 	<key>UIApplicationSceneManifest</key>

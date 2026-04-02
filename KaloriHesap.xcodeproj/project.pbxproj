@@ -36,6 +36,8 @@
 		F1053DE722B1A846854163E0 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3BD8E8342AF5B353E3CA63 /* OnboardingView.swift */; };
 		F5EDCED2B03FE75372118193 /* MealSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFF47A9CCB214903D689BE /* MealSectionView.swift */; };
 		F6A2FB730A3C36291735BEEA /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD7E3D0ECF25C74176956C /* DashboardView.swift */; };
+		AC12F45B9E7D3082C6F5A1E4 /* StepCounterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D9F12E8A4B7065D2E19F3A /* StepCounterService.swift */; };
+		7F3A1D8E2B5C9046F8A3E7D1 /* StepCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E2F1C3B7D9054E6F0A2C8 /* StepCounterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		ED67569920313B59C5578D31 /* KaloriHesap.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = KaloriHesap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14BC59F1C73404419528040 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FE6C45507193FE7EA50F8E72 /* EditFoodEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodEntryView.swift; sourceTree = "<group>"; };
+		C3D9F12E8A4B7065D2E19F3A /* StepCounterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCounterService.swift; sourceTree = "<group>"; };
+		4A8E2F1C3B7D9054E6F0A2C8 /* StepCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCounterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -175,6 +179,7 @@
 			children = (
 				6FAD7E3D0ECF25C74176956C /* DashboardView.swift */,
 				DDCFF47A9CCB214903D689BE /* MealSectionView.swift */,
+				4A8E2F1C3B7D9054E6F0A2C8 /* StepCounterView.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 			children = (
 				5E1F6299A79A585F9735C0B9 /* MealReminderService.swift */,
 				C155D46EFE7E97BCF5F993CC /* ReviewManager.swift */,
+				C3D9F12E8A4B7065D2E19F3A /* StepCounterService.swift */,
 				D9C43371A49E9810EDD8567F /* WaterReminderService.swift */,
 			);
 			path = Services;
@@ -311,6 +317,8 @@
 				B988BFB50FC7116F91551131 /* ContentView.swift in Sources */,
 				D0787C5CABA54D07C61BEFBE /* DailyLog.swift in Sources */,
 				F6A2FB730A3C36291735BEEA /* DashboardView.swift in Sources */,
+				AC12F45B9E7D3082C6F5A1E4 /* StepCounterService.swift in Sources */,
+				7F3A1D8E2B5C9046F8A3E7D1 /* StepCounterView.swift in Sources */,
 				A1E0BAB740E6FDC7B52FE53A /* DashboardViewModel.swift in Sources */,
 				EF9F159CE2533C549BA9AC9A /* EditFoodEntryView.swift in Sources */,
 				A67A087B34536C1B22A8CD8C /* FoodDatabase.swift in Sources */,
@@ -385,7 +393,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 6;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -404,7 +412,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -412,7 +420,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -434,7 +442,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ogzgul.caloriex;
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -457,7 +465,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ogzgul.caloriex;
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -496,7 +504,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 6;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -509,14 +517,14 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

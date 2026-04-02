@@ -5,3 +5,16 @@
 "yemek" = "yemek";
 "bardak" = "bardak";
 "Hafta" = "Hafta";
+
+// MARK: - Adım Sayar
+"Adım Sayar" = "Adım Sayar";
+"hedef" = "hedef";
+"Adım" = "Adım";
+"adım" = "adım";
+"Yakılan" = "Yakılan";
+"Mesafe" = "Mesafe";
+"Tamamlanan" = "Tamamlanan";
+"km" = "km";
+"Hareket İzni Kapalı" = "Hareket İzni Kapalı";
+"Adım takibi için Ayarlar > Caloriex Fit > Hareket bölümünden izin ver." = "Adım takibi için Ayarlar > Caloriex Fit > Hareket bölümünden izin ver.";
+"Bu cihazda adım sayar desteklenmiyor." = "Bu cihazda adım sayar desteklenmiyor.";

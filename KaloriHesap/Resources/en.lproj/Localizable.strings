@@ -232,6 +232,19 @@
 "Porsiyon Seçin" = "Select Portion";
 "Porsiyon" = "Portion";
 
+// MARK: - Step Counter
+"Adım Sayar" = "Step Counter";
+"hedef" = "goal";
+"Adım" = "Steps";
+"adım" = "steps";
+"Yakılan" = "Burned";
+"Mesafe" = "Distance";
+"Tamamlanan" = "Completed";
+"km" = "km";
+"Hareket İzni Kapalı" = "Motion Access Denied";
+"Adım takibi için Ayarlar > Caloriex Fit > Hareket bölümünden izin ver." = "Go to Settings > Caloriex Fit > Motion to enable step tracking.";
+"Bu cihazda adım sayar desteklenmiyor." = "Step counting is not supported on this device.";
+
 // MARK: - Misc
 "kcal" = "kcal";
 "kcal/100g" = "kcal/100g";

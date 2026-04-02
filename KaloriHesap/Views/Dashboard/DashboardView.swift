@@ -8,6 +8,7 @@ struct DashboardView: View {
     @State private var viewModel: DashboardViewModel?
     @State private var activeMealType: MealType? = nil
     @State private var editingEntry: FoodEntry? = nil
+    @StateObject private var stepService = StepCounterService()
 
     var body: some View {
         Group {
@@ -105,6 +106,15 @@ struct DashboardView: View {
                     )
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
+
+                    StepStatRow(
+                        steps: stepService.todaySteps,
+                        stepGoal: stepService.stepGoal,
+                        distanceKm: stepService.distanceKm,
+                        caloriesBurned: stepService.caloriesBurned(weightKg: vm.profile?.weightKg ?? 70)
+                    )
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
                 }
 
                 // ─── Öğün Bölümleri ──────────────────────────
@@ -130,10 +140,22 @@ struct DashboardView: View {
                     .listRowSeparator(.hidden)
                     .listRowInsets(EdgeInsets())
                 }
+
+                // ─── Adım Sayar ──────────────────────────────
+                Section {
+                    StepCounterView(
+                        service: stepService,
+                        weightKg: vm.profile?.weightKg ?? 70
+                    )
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                }
             }
             .listStyle(.insetGrouped)
             .navigationTitle("Kalori Takibi")
             .navigationBarTitleDisplayMode(.inline)
+            .onAppear { stepService.start() }
+            .onDisappear { stepService.stop() }
         }
     }
 }

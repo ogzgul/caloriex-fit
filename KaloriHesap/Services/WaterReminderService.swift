@@ -1,6 +1,17 @@
 import Foundation
 import UserNotifications
 
+extension UNAuthorizationStatus {
+    var allowsScheduling: Bool {
+        switch self {
+        case .authorized, .provisional, .ephemeral:
+            return true
+        default:
+            return false
+        }
+    }
+}
+
 // MARK: - Hatırlatma modu
 enum WaterReminderMode: String, CaseIterable, Codable {
     case saatBasi  = "Saat Başı"
@@ -52,18 +63,22 @@ enum WaterReminderService {
     static let categoryID = "WATER_REMINDER"
 
     /// Bildirim izni iste
-    static func requestPermission(completion: @escaping (Bool) -> Void) {
+    static func requestPermission(completion: @escaping @MainActor (Bool) -> Void) {
         UNUserNotificationCenter.current()
             .requestAuthorization(options: [.alert, .sound, .badge]) { granted, _ in
-                DispatchQueue.main.async { completion(granted) }
+                Task { @MainActor in
+                    completion(granted)
+                }
             }
     }
 
     /// Mevcut izin durumunu sorgula
-    static func checkPermission(completion: @escaping @Sendable (UNAuthorizationStatus) -> Void) {
+    static func checkPermission(completion: @escaping @MainActor (UNAuthorizationStatus) -> Void) {
         UNUserNotificationCenter.current().getNotificationSettings { settings in
             let status = settings.authorizationStatus
-            DispatchQueue.main.async { completion(status) }
+            Task { @MainActor in
+                completion(status)
+            }
         }
     }
 

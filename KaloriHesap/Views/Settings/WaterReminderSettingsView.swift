@@ -40,11 +40,12 @@ struct WaterReminderSettingsView: View {
                 }
                 .tint(.blue)
                 .onChange(of: settings.isEnabled) { _, newValue in
+                    // Hemen kaydet — kullanıcı geri gitmeden önce UserDefaults'a yaz
+                    settings.save()
                     if newValue {
                         handleEnableToggle()
                     } else {
-                        WaterReminderService.cancelAll()
-                        saveAndSchedule()
+                        WaterReminderService.schedule(settings: settings)
                     }
                 }
             } footer: {
@@ -152,7 +153,12 @@ struct WaterReminderSettingsView: View {
         }
         .navigationTitle("Su Hatırlatması")
         .navigationBarTitleDisplayMode(.inline)
-        .onAppear { checkPermission() }
+        .alert("Bildirim İzni Gerekli", isPresented: $showPermissionAlert) {
+            Button("Tamam", role: .cancel) {}
+        } message: {
+            Text("Su hatırlatmasını açmak için Ayarlar > KaloriHesap > Bildirimler bölümünden izin vermen gerekiyor.")
+        }
+        .onAppear { refreshFromStorage() }
     }
 
     // MARK: - Helpers
@@ -176,6 +182,11 @@ struct WaterReminderSettingsView: View {
         WaterReminderService.schedule(settings: settings)
     }
 
+    private func refreshFromStorage() {
+        settings = WaterReminderSettings.load()
+        checkPermission()
+    }
+
     private func checkPermission() {
         WaterReminderService.checkPermission { status in
             permissionStatus = status
@@ -185,17 +196,20 @@ struct WaterReminderSettingsView: View {
     private func handleEnableToggle() {
         WaterReminderService.checkPermission { status in
             permissionStatus = status
-            if status == .authorized {
+            if status.allowsScheduling {
                 saveAndSchedule()
             } else if status == .notDetermined {
                 WaterReminderService.requestPermission { granted in
                     permissionStatus = granted ? .authorized : .denied
                     if granted { saveAndSchedule() }
-                    else { settings.isEnabled = false }
+                    else {
+                        settings.isEnabled = false
+                        saveAndSchedule()
+                    }
                 }
             } else {
-                // denied — toggle geri al
                 settings.isEnabled = false
+                saveAndSchedule()
                 showPermissionAlert = true
             }
         }
