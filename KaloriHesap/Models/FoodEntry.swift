@@ -51,6 +51,34 @@ final class FoodEntry {
         self.totalFiber    = (totalGrams * foodItem.fiberPer100g)    / 100.0
     }
 
+    /// Manuel kalori girişi için init (ürün listesinde olmayan yiyecekler)
+    init(
+        manualName: String,
+        calories: Double,
+        protein: Double = 0,
+        carbs: Double = 0,
+        fat: Double = 0,
+        mealType: MealType,
+        date: Date = Date()
+    ) {
+        self.id = UUID()
+        self.foodItemID = UUID()
+        self.foodName = manualName
+        self.mealType = mealType.rawValue
+        self.date = date
+
+        self.portionUnitRaw = PortionUnit.porsiyon.rawValue
+        self.portionLabel = "Manuel Giriş"
+        self.portionGramsEquivalent = 100
+        self.quantity = 1.0
+
+        self.totalCalories = calories
+        self.totalProtein  = protein
+        self.totalCarbs    = carbs
+        self.totalFat      = fat
+        self.totalFiber    = 0
+    }
+
     var mealTypeEnum: MealType {
         MealType(rawValue: mealType) ?? .atistirma
     }

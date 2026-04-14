@@ -57,6 +57,7 @@ struct FoodSearchTabView: View {
     @State private var viewModel = FoodSearchViewModel()
     @State private var selectedFood: FoodItem? = nil
     @State private var mealType: MealType = .kahvalti
+    @State private var showManualEntry = false
 
     var body: some View {
         NavigationStack {
@@ -113,12 +114,30 @@ struct FoodSearchTabView: View {
             }
             .navigationTitle("Besin Ara")
             .searchable(text: $viewModel.searchText, prompt: "Besin ara...")
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button {
+                        showManualEntry = true
+                    } label: {
+                        Label("Manuel Ekle", systemImage: "pencil.circle")
+                            .labelStyle(.iconOnly)
+                            .font(.title3)
+                    }
+                }
+            }
         }
         .sheet(item: $selectedFood) { food in
             AddFoodEntryView(foodItem: food, mealType: mealType) { item, portion, qty, meal in
                 let dashVM = DashboardViewModel(modelContext: modelContext)
                 dashVM.addEntry(foodItem: item, portion: portion, quantity: qty, mealType: meal)
                 selectedFood = nil
+            }
+        }
+        .sheet(isPresented: $showManualEntry) {
+            ManualCalorieEntryView(mealType: mealType) { name, cal, prot, carbs, fat, meal in
+                let dashVM = DashboardViewModel(modelContext: modelContext)
+                dashVM.addManualEntry(name: name, calories: cal, protein: prot, carbs: carbs, fat: fat, mealType: meal)
+                showManualEntry = false
             }
         }
     }

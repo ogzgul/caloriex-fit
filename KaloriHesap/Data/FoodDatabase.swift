@@ -489,7 +489,58 @@ struct FoodDatabase {
             caloriesPer100g: 109, proteinPer100g: 22.7, carbsPer100g: 1.7, fatPer100g: 1.0, fiberPer100g: 0,
             availablePortions: [
                 Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
-                Portion(unit: .dilim, gramsEquivalent: 20, label: "1 Dilim (20 g)")
+                Portion(unit: .dilim, gramsEquivalent: 20, label: "1 Dilim (20 g)"),
+                Portion(unit: .porsiyon, gramsEquivalent: 80, label: "1 Porsiyon (80 g)")
+            ]),
+        FoodItem(name: "Hindi Füme (Dilimli)", category: .et,
+            caloriesPer100g: 104, proteinPer100g: 20.0, carbsPer100g: 1.5, fatPer100g: 1.8, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .dilim, gramsEquivalent: 15, label: "1 İnce Dilim (15 g)"),
+                Portion(unit: .dilim, gramsEquivalent: 25, label: "1 Kalın Dilim (25 g)"),
+                Portion(unit: .porsiyon, gramsEquivalent: 75, label: "1 Porsiyon (75 g)")
+            ]),
+        FoodItem(name: "Jambon (Hindi)", category: .et,
+            caloriesPer100g: 120, proteinPer100g: 17.5, carbsPer100g: 2.5, fatPer100g: 4.5, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .dilim, gramsEquivalent: 20, label: "1 Dilim (20 g)"),
+                Portion(unit: .porsiyon, gramsEquivalent: 80, label: "1 Porsiyon (80 g)")
+            ]),
+        FoodItem(name: "Jambon (Dana)", category: .et,
+            caloriesPer100g: 148, proteinPer100g: 15.0, carbsPer100g: 3.5, fatPer100g: 8.0, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .dilim, gramsEquivalent: 20, label: "1 Dilim (20 g)"),
+                Portion(unit: .porsiyon, gramsEquivalent: 80, label: "1 Porsiyon (80 g)")
+            ]),
+        FoodItem(name: "Salam (Dana)", category: .et,
+            caloriesPer100g: 282, proteinPer100g: 14.0, carbsPer100g: 2.0, fatPer100g: 24.0, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .dilim, gramsEquivalent: 10, label: "1 Dilim (10 g)"),
+                Portion(unit: .porsiyon, gramsEquivalent: 50, label: "1 Porsiyon (50 g)")
+            ]),
+        FoodItem(name: "Sucuk (Dilimli)", category: .et,
+            caloriesPer100g: 348, proteinPer100g: 18.0, carbsPer100g: 2.5, fatPer100g: 29.5, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .dilim, gramsEquivalent: 10, label: "1 Dilim (10 g)"),
+                Portion(unit: .adet, gramsEquivalent: 60, label: "1 Porsiyon (60 g)")
+            ]),
+        FoodItem(name: "Pastırma", category: .et,
+            caloriesPer100g: 278, proteinPer100g: 28.0, carbsPer100g: 2.5, fatPer100g: 17.0, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .dilim, gramsEquivalent: 8, label: "1 İnce Dilim (8 g)"),
+                Portion(unit: .porsiyon, gramsEquivalent: 40, label: "1 Porsiyon (40 g)")
+            ]),
+        FoodItem(name: "Kavurma (Kuzu)", category: .et,
+            caloriesPer100g: 295, proteinPer100g: 22.0, carbsPer100g: 0, fatPer100g: 23.0, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 20, label: "1 Yemek Kaşığı (20 g)"),
+                Portion(unit: .porsiyon, gramsEquivalent: 100, label: "1 Porsiyon (100 g)")
             ]),
     ]}
 
@@ -960,6 +1011,181 @@ struct FoodDatabase {
             availablePortions: [
                 Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
                 Portion(unit: .yemekKasigi, gramsEquivalent: 16, label: "1 Yemek Kaşığı (16 g)")
+            ]),
+        FoodItem(name: "Nar Ekşisi", category: .yagSos,
+            caloriesPer100g: 268, proteinPer100g: 0.8, carbsPer100g: 68.0, fatPer100g: 0.1, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .ml, gramsEquivalent: 1, label: "1 ml"),
+                Portion(unit: .cayKasigi, gramsEquivalent: 5, label: "1 Çay Kaşığı (5 ml)"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 15, label: "1 Yemek Kaşığı (15 ml)")
+            ]),
+        FoodItem(name: "Soya Sosu", category: .yagSos,
+            caloriesPer100g: 60, proteinPer100g: 10.0, carbsPer100g: 5.6, fatPer100g: 0.1, fiberPer100g: 0.8,
+            availablePortions: [
+                Portion(unit: .ml, gramsEquivalent: 1, label: "1 ml"),
+                Portion(unit: .cayKasigi, gramsEquivalent: 5, label: "1 Çay Kaşığı (5 ml)"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 15, label: "1 Yemek Kaşığı (15 ml)")
+            ]),
+        FoodItem(name: "BBQ / Barbekü Sosu", category: .yagSos,
+            caloriesPer100g: 172, proteinPer100g: 1.0, carbsPer100g: 40.0, fatPer100g: 0.5, fiberPer100g: 0.3,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .cayKasigi, gramsEquivalent: 5, label: "1 Çay Kaşığı (5 g)"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 17, label: "1 Yemek Kaşığı (17 g)")
+            ]),
+        FoodItem(name: "Acı Sos (Tabasco)", category: .yagSos,
+            caloriesPer100g: 12, proteinPer100g: 0.6, carbsPer100g: 1.0, fatPer100g: 0.2, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .ml, gramsEquivalent: 1, label: "1 ml"),
+                Portion(unit: .cayKasigi, gramsEquivalent: 5, label: "1 Çay Kaşığı (5 ml)")
+            ]),
+        FoodItem(name: "Sirke (Üzüm)", category: .yagSos,
+            caloriesPer100g: 18, proteinPer100g: 0, carbsPer100g: 0.6, fatPer100g: 0, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .ml, gramsEquivalent: 1, label: "1 ml"),
+                Portion(unit: .cayKasigi, gramsEquivalent: 5, label: "1 Çay Kaşığı (5 ml)"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 15, label: "1 Yemek Kaşığı (15 ml)")
+            ]),
+        FoodItem(name: "Elma Sirkesi", category: .yagSos,
+            caloriesPer100g: 22, proteinPer100g: 0, carbsPer100g: 0.9, fatPer100g: 0, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .ml, gramsEquivalent: 1, label: "1 ml"),
+                Portion(unit: .cayKasigi, gramsEquivalent: 5, label: "1 Çay Kaşığı (5 ml)"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 15, label: "1 Yemek Kaşığı (15 ml)")
+            ]),
+        FoodItem(name: "Pekmez (Üzüm)", category: .yagSos,
+            caloriesPer100g: 280, proteinPer100g: 0.5, carbsPer100g: 72.0, fatPer100g: 0, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .cayKasigi, gramsEquivalent: 7, label: "1 Çay Kaşığı (7 g)"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 21, label: "1 Yemek Kaşığı (21 g)")
+            ]),
+        FoodItem(name: "Dut Pekmezi", category: .yagSos,
+            caloriesPer100g: 258, proteinPer100g: 1.0, carbsPer100g: 66.0, fatPer100g: 0, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .cayKasigi, gramsEquivalent: 7, label: "1 Çay Kaşığı (7 g)"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 21, label: "1 Yemek Kaşığı (21 g)")
+            ]),
+        FoodItem(name: "Sarımsaklı Yoğurt Sosu", category: .yagSos,
+            caloriesPer100g: 78, proteinPer100g: 4.5, carbsPer100g: 5.5, fatPer100g: 4.0, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 30, label: "1 Yemek Kaşığı (30 g)"),
+                Portion(unit: .kase, gramsEquivalent: 150, label: "1 Küçük Kase (150 g)")
+            ]),
+        FoodItem(name: "Tahin Sosu (Seyreltilmiş)", category: .yagSos,
+            caloriesPer100g: 230, proteinPer100g: 7.0, carbsPer100g: 12.0, fatPer100g: 18.0, fiberPer100g: 2.0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 30, label: "1 Yemek Kaşığı (30 g)")
+            ]),
+        FoodItem(name: "Tereyağı", category: .yagSos,
+            caloriesPer100g: 717, proteinPer100g: 0.9, carbsPer100g: 0.1, fatPer100g: 81.0, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .cayKasigi, gramsEquivalent: 5, label: "1 Çay Kaşığı (5 g)"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 14, label: "1 Yemek Kaşığı (14 g)")
+            ]),
+        FoodItem(name: "Margarin", category: .yagSos,
+            caloriesPer100g: 720, proteinPer100g: 0.1, carbsPer100g: 0.4, fatPer100g: 80.0, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .cayKasigi, gramsEquivalent: 5, label: "1 Çay Kaşığı (5 g)"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 14, label: "1 Yemek Kaşığı (14 g)")
+            ]),
+        FoodItem(name: "Nutella / Çikolatalı Fındık Ezmesi", category: .yagSos,
+            caloriesPer100g: 539, proteinPer100g: 6.3, carbsPer100g: 57.5, fatPer100g: 30.9, fiberPer100g: 3.4,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .cayKasigi, gramsEquivalent: 7, label: "1 Çay Kaşığı (7 g)"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 15, label: "1 Yemek Kaşığı (15 g)")
+            ]),
+        FoodItem(name: "Ranch Sosu", category: .yagSos,
+            caloriesPer100g: 321, proteinPer100g: 1.3, carbsPer100g: 6.0, fatPer100g: 33.0, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 30, label: "2 Yemek Kaşığı (30 g)")
+            ]),
+        FoodItem(name: "Domates Sosu (Ev Yapımı)", category: .yagSos,
+            caloriesPer100g: 45, proteinPer100g: 1.5, carbsPer100g: 7.5, fatPer100g: 1.2, fiberPer100g: 1.0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 30, label: "1 Yemek Kaşığı (30 g)"),
+                Portion(unit: .kase, gramsEquivalent: 150, label: "1 Kase (150 g)")
+            ]),
+        FoodItem(name: "Salça (Domates)", category: .yagSos,
+            caloriesPer100g: 82, proteinPer100g: 3.5, carbsPer100g: 14.0, fatPer100g: 0.4, fiberPer100g: 2.0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .cayKasigi, gramsEquivalent: 5, label: "1 Çay Kaşığı (5 g)"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 15, label: "1 Yemek Kaşığı (15 g)")
+            ]),
+        FoodItem(name: "Salça (Biber)", category: .yagSos,
+            caloriesPer100g: 90, proteinPer100g: 3.0, carbsPer100g: 16.0, fatPer100g: 1.5, fiberPer100g: 3.0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .cayKasigi, gramsEquivalent: 5, label: "1 Çay Kaşığı (5 g)"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 15, label: "1 Yemek Kaşığı (15 g)")
+            ]),
+        FoodItem(name: "Burger Sosu", category: .yagSos,
+            caloriesPer100g: 358, proteinPer100g: 1.5, carbsPer100g: 14.0, fatPer100g: 33.0, fiberPer100g: 0.3,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 20, label: "1 Yemek Kaşığı (20 g)"),
+                Portion(unit: .porsiyon, gramsEquivalent: 30, label: "1 Paket (30 g)")
+            ]),
+        FoodItem(name: "Acı Biber Ezmesi (Harissa)", category: .yagSos,
+            caloriesPer100g: 132, proteinPer100g: 4.5, carbsPer100g: 9.0, fatPer100g: 9.0, fiberPer100g: 4.5,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .cayKasigi, gramsEquivalent: 5, label: "1 Çay Kaşığı (5 g)"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 15, label: "1 Yemek Kaşığı (15 g)")
+            ]),
+        FoodItem(name: "Tzatziki / Cacık Sosu", category: .yagSos,
+            caloriesPer100g: 72, proteinPer100g: 4.0, carbsPer100g: 4.5, fatPer100g: 4.0, fiberPer100g: 0.3,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 30, label: "1 Yemek Kaşığı (30 g)"),
+                Portion(unit: .kase, gramsEquivalent: 150, label: "1 Kase (150 g)")
+            ]),
+        FoodItem(name: "Sriracha Sosu", category: .yagSos,
+            caloriesPer100g: 93, proteinPer100g: 2.3, carbsPer100g: 18.0, fatPer100g: 0.9, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .ml, gramsEquivalent: 1, label: "1 ml"),
+                Portion(unit: .cayKasigi, gramsEquivalent: 5, label: "1 Çay Kaşığı (5 ml)"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 17, label: "1 Yemek Kaşığı (17 ml)")
+            ]),
+        FoodItem(name: "Teriyaki Sosu", category: .yagSos,
+            caloriesPer100g: 89, proteinPer100g: 5.2, carbsPer100g: 15.5, fatPer100g: 0.1, fiberPer100g: 0.1,
+            availablePortions: [
+                Portion(unit: .ml, gramsEquivalent: 1, label: "1 ml"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 18, label: "1 Yemek Kaşığı (18 ml)")
+            ]),
+        FoodItem(name: "Ekşi Krema (Sour Cream)", category: .yagSos,
+            caloriesPer100g: 193, proteinPer100g: 2.4, carbsPer100g: 4.6, fatPer100g: 19.4, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 30, label: "1 Yemek Kaşığı (30 g)")
+            ]),
+        FoodItem(name: "Guacamole", category: .yagSos,
+            caloriesPer100g: 157, proteinPer100g: 2.0, carbsPer100g: 8.5, fatPer100g: 13.5, fiberPer100g: 6.7,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 30, label: "1 Yemek Kaşığı (30 g)")
+            ]),
+        FoodItem(name: "Humus", category: .yagSos,
+            caloriesPer100g: 166, proteinPer100g: 8.0, carbsPer100g: 14.3, fatPer100g: 9.6, fiberPer100g: 6.0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 30, label: "1 Yemek Kaşığı (30 g)"),
+                Portion(unit: .kase, gramsEquivalent: 100, label: "1 Küçük Kase (100 g)")
+            ]),
+        FoodItem(name: "Zeytinyağlı & Limon Sos", category: .yagSos,
+            caloriesPer100g: 476, proteinPer100g: 0.2, carbsPer100g: 1.5, fatPer100g: 52.0, fiberPer100g: 0,
+            availablePortions: [
+                Portion(unit: .ml, gramsEquivalent: 1, label: "1 ml"),
+                Portion(unit: .yemekKasigi, gramsEquivalent: 15, label: "1 Yemek Kaşığı (15 ml)")
             ]),
     ]}
 
@@ -2367,20 +2593,52 @@ struct FoodDatabase {
             caloriesPer100g: 270, proteinPer100g: 11.0, carbsPer100g: 28.0, fatPer100g: 13.0, fiberPer100g: 1.0,
             availablePortions: [
                 Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
-                Portion(unit: .dilim, gramsEquivalent: 150, label: "1 Dilim (150 g)")
+                Portion(unit: .dilim, gramsEquivalent: 150, label: "1 Dilim (150 g)"),
+                Portion(unit: .dilim, gramsEquivalent: 100, label: "1 Küçük Dilim (100 g)")
             ]),
         FoodItem(name: "Ispanaklı Börek", category: .tahil,
             caloriesPer100g: 255, proteinPer100g: 8.5, carbsPer100g: 27.0, fatPer100g: 12.0, fiberPer100g: 2.0,
             availablePortions: [
                 Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
-                Portion(unit: .dilim, gramsEquivalent: 120, label: "1 Dilim (120 g)"),
-                Portion(unit: .adet, gramsEquivalent: 60, label: "1 Küçük Parça (60 g)")
+                Portion(unit: .adet, gramsEquivalent: 70, label: "1 Üçgen Börek (70 g)"),
+                Portion(unit: .adet, gramsEquivalent: 50, label: "1 Rulo Börek (50 g)"),
+                Portion(unit: .dilim, gramsEquivalent: 120, label: "1 Tepsi Dilimi (120 g)")
             ]),
         FoodItem(name: "Patatesli Börek", category: .tahil,
             caloriesPer100g: 240, proteinPer100g: 5.5, carbsPer100g: 32.0, fatPer100g: 10.0, fiberPer100g: 1.5,
             availablePortions: [
                 Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
-                Portion(unit: .dilim, gramsEquivalent: 120, label: "1 Dilim (120 g)")
+                Portion(unit: .adet, gramsEquivalent: 70, label: "1 Üçgen Börek (70 g)"),
+                Portion(unit: .adet, gramsEquivalent: 50, label: "1 Rulo Börek (50 g)"),
+                Portion(unit: .dilim, gramsEquivalent: 120, label: "1 Tepsi Dilimi (120 g)")
+            ]),
+        FoodItem(name: "Peynirli Börek (Üçgen)", category: .tahil,
+            caloriesPer100g: 285, proteinPer100g: 10.0, carbsPer100g: 29.0, fatPer100g: 14.0, fiberPer100g: 1.0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .adet, gramsEquivalent: 70, label: "1 Üçgen Börek (70 g)"),
+                Portion(unit: .adet, gramsEquivalent: 85, label: "1 Büyük Üçgen (85 g)")
+            ]),
+        FoodItem(name: "Peynirli Börek (Rulo)", category: .tahil,
+            caloriesPer100g: 285, proteinPer100g: 10.0, carbsPer100g: 29.0, fatPer100g: 14.0, fiberPer100g: 1.0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .adet, gramsEquivalent: 50, label: "1 Rulo (50 g)"),
+                Portion(unit: .adet, gramsEquivalent: 70, label: "1 Büyük Rulo (70 g)")
+            ]),
+        FoodItem(name: "Kıymalı Börek (Üçgen)", category: .tahil,
+            caloriesPer100g: 295, proteinPer100g: 12.0, carbsPer100g: 28.0, fatPer100g: 14.5, fiberPer100g: 1.0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .adet, gramsEquivalent: 70, label: "1 Üçgen Börek (70 g)"),
+                Portion(unit: .adet, gramsEquivalent: 85, label: "1 Büyük Üçgen (85 g)")
+            ]),
+        FoodItem(name: "Kıymalı Börek (Rulo)", category: .tahil,
+            caloriesPer100g: 295, proteinPer100g: 12.0, carbsPer100g: 28.0, fatPer100g: 14.5, fiberPer100g: 1.0,
+            availablePortions: [
+                Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
+                Portion(unit: .adet, gramsEquivalent: 50, label: "1 Rulo (50 g)"),
+                Portion(unit: .adet, gramsEquivalent: 70, label: "1 Büyük Rulo (70 g)")
             ]),
         FoodItem(name: "Sigara Böreği (Peynirli)", category: .tahil,
             caloriesPer100g: 310, proteinPer100g: 10.0, carbsPer100g: 30.0, fatPer100g: 16.0, fiberPer100g: 1.0,
@@ -2399,7 +2657,8 @@ struct FoodDatabase {
             caloriesPer100g: 290, proteinPer100g: 12.0, carbsPer100g: 27.0, fatPer100g: 14.0, fiberPer100g: 1.2,
             availablePortions: [
                 Portion(unit: .gram, gramsEquivalent: 1, label: "1 g"),
-                Portion(unit: .dilim, gramsEquivalent: 150, label: "1 Dilim (150 g)")
+                Portion(unit: .dilim, gramsEquivalent: 150, label: "1 Dilim (150 g)"),
+                Portion(unit: .dilim, gramsEquivalent: 100, label: "1 Küçük Dilim (100 g)")
             ]),
     ]}
 

@@ -3,10 +3,12 @@ import SwiftUI
 struct FoodSearchView: View {
     let mealType: MealType
     let onAdd: (FoodItem, Portion, Double, MealType) -> Void
+    let onAddManual: (String, Double, Double, Double, Double, MealType) -> Void
 
     @Environment(\.dismiss) private var dismiss
     @State private var viewModel = FoodSearchViewModel()
     @State private var selectedFood: FoodItem? = nil
+    @State private var showManualEntry = false
 
     var body: some View {
         NavigationStack {
@@ -37,11 +39,25 @@ struct FoodSearchView: View {
 
                 // Sonuç listesi
                 if viewModel.results.isEmpty {
-                    ContentUnavailableView(
-                        "Sonuç Bulunamadı",
-                        systemImage: "magnifyingglass",
-                        description: Text("'\(viewModel.searchText)' için besin bulunamadı")
-                    )
+                    VStack(spacing: 20) {
+                        ContentUnavailableView(
+                            "Sonuç Bulunamadı",
+                            systemImage: "magnifyingglass",
+                            description: Text("'\(viewModel.searchText)' için besin bulunamadı")
+                        )
+                        Button {
+                            showManualEntry = true
+                        } label: {
+                            Label("Manuel Kalori Gir", systemImage: "pencil.circle.fill")
+                                .font(.headline)
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color.orange)
+                                .foregroundStyle(.white)
+                                .clipShape(RoundedRectangle(cornerRadius: 14))
+                                .padding(.horizontal, 32)
+                        }
+                    }
                 } else {
                     List {
                         ForEach(viewModel.results) { food in
@@ -64,11 +80,26 @@ struct FoodSearchView: View {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Kapat") { dismiss() }
                 }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button {
+                        showManualEntry = true
+                    } label: {
+                        Label("Manuel", systemImage: "pencil.circle")
+                            .labelStyle(.iconOnly)
+                            .font(.title3)
+                    }
+                }
             }
             .sheet(item: $selectedFood) { food in
                 AddFoodEntryView(foodItem: food, mealType: mealType) { item, portion, qty, meal in
                     onAdd(item, portion, qty, meal)
                     selectedFood = nil
+                }
+            }
+            .sheet(isPresented: $showManualEntry) {
+                ManualCalorieEntryView(mealType: mealType) { name, cal, prot, carbs, fat, meal in
+                    onAddManual(name, cal, prot, carbs, fat, meal)
+                    showManualEntry = false
                 }
             }
         }

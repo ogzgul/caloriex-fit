@@ -8,6 +8,7 @@ struct DashboardView: View {
     @State private var viewModel: DashboardViewModel?
     @State private var activeMealType: MealType? = nil
     @State private var editingEntry: FoodEntry? = nil
+    @State private var showManualEntry = false
     @StateObject private var stepService = StepCounterService()
 
     var body: some View {
@@ -20,14 +21,27 @@ struct DashboardView: View {
             }
         }
         .sheet(item: $activeMealType) { meal in
-            FoodSearchView(mealType: meal) { food, portion, qty, mealType in
-                viewModel?.addEntry(foodItem: food, portion: portion, quantity: qty, mealType: mealType)
-                maybeRequestReview()
-            }
+            FoodSearchView(
+                mealType: meal,
+                onAdd: { food, portion, qty, mealType in
+                    viewModel?.addEntry(foodItem: food, portion: portion, quantity: qty, mealType: mealType)
+                    maybeRequestReview()
+                },
+                onAddManual: { name, cal, prot, carbs, fat, mealType in
+                    viewModel?.addManualEntry(name: name, calories: cal, protein: prot, carbs: carbs, fat: fat, mealType: mealType)
+                    maybeRequestReview()
+                }
+            )
         }
         .sheet(item: $editingEntry) { entry in
             EditFoodEntryView(entry: entry) {
                 viewModel?.objectDidChange()
+            }
+        }
+        .sheet(isPresented: $showManualEntry) {
+            ManualCalorieEntryView(mealType: .kahvalti) { name, cal, prot, carbs, fat, mealType in
+                viewModel?.addManualEntry(name: name, calories: cal, protein: prot, carbs: carbs, fat: fat, mealType: mealType)
+                maybeRequestReview()
             }
         }
     }
@@ -154,6 +168,16 @@ struct DashboardView: View {
             .listStyle(.insetGrouped)
             .navigationTitle("Kalori Takibi")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button {
+                        showManualEntry = true
+                    } label: {
+                        Image(systemName: "pencil.circle")
+                            .font(.title3)
+                    }
+                }
+            }
             .onAppear { stepService.start() }
             .onDisappear { stepService.stop() }
         }

@@ -17,6 +17,7 @@
 		74F3616F297ED4BF460F35EF /* PortionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F684E65D03512C437E04E /* PortionType.swift */; };
 		7E8F5F8CFD06922F872FB0C8 /* MealReminderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1F6299A79A585F9735C0B9 /* MealReminderService.swift */; };
 		7FFD0F7FBA825949C53EB646 /* AddFoodEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65709232067CE1AD1B803DBB /* AddFoodEntryView.swift */; };
+		B1D4E7F2A3C09821D6F5B4E0 /* ManualCalorieEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C8F1D2E4B07923C6D5A8E1 /* ManualCalorieEntryView.swift */; };
 		808A6A35E99EED568F14821C /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6F74C0D40FF930EBE790B5 /* FoodItem.swift */; };
 		8681F394F5C4478F88A609A9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BF60E6D9505093619E44F8 /* ProfileView.swift */; };
 		8CA704C51976FF8944E538A2 /* KaloriHesapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8391BDE2D58F0B6CD24A7C2B /* KaloriHesapApp.swift */; };
@@ -53,6 +54,7 @@
 		5E1F6299A79A585F9735C0B9 /* MealReminderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealReminderService.swift; sourceTree = "<group>"; };
 		5F3BD8E8342AF5B353E3CA63 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		65709232067CE1AD1B803DBB /* AddFoodEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodEntryView.swift; sourceTree = "<group>"; };
+		A3C8F1D2E4B07923C6D5A8E1 /* ManualCalorieEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualCalorieEntryView.swift; sourceTree = "<group>"; };
 		67456634F3CE21A0BF36EDFB /* CalorieRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieRingView.swift; sourceTree = "<group>"; };
 		6FAD7E3D0ECF25C74176956C /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		7307964049BC65ACBA30BE38 /* DailyLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLog.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				65709232067CE1AD1B803DBB /* AddFoodEntryView.swift */,
 				FE6C45507193FE7EA50F8E72 /* EditFoodEntryView.swift */,
 				56706123B8B08EC79F0052FA /* FoodSearchView.swift */,
+				A3C8F1D2E4B07923C6D5A8E1 /* ManualCalorieEntryView.swift */,
 			);
 			path = Food;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FFD0F7FBA825949C53EB646 /* AddFoodEntryView.swift in Sources */,
+				B1D4E7F2A3C09821D6F5B4E0 /* ManualCalorieEntryView.swift in Sources */,
 				9A78E9A2B57781C7AC5C2839 /* CalorieRingView.swift in Sources */,
 				B988BFB50FC7116F91551131 /* ContentView.swift in Sources */,
 				D0787C5CABA54D07C61BEFBE /* DailyLog.swift in Sources */,
@@ -393,7 +397,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -412,7 +416,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -504,7 +508,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -517,7 +521,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";

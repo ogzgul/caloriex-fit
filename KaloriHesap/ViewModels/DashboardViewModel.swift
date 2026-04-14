@@ -79,6 +79,24 @@ final class DashboardViewModel {
         try? modelContext.save()
     }
 
+    // MARK: - Manuel kalori girişi
+    func addManualEntry(name: String, calories: Double, protein: Double, carbs: Double, fat: Double, mealType: MealType) {
+        guard let log = currentLog else { return }
+        let entry = FoodEntry(
+            manualName: name,
+            calories: calories,
+            protein: protein,
+            carbs: carbs,
+            fat: fat,
+            mealType: mealType,
+            date: selectedDate
+        )
+        entry.dailyLog = log
+        log.entries.append(entry)
+        modelContext.insert(entry)
+        try? modelContext.save()
+    }
+
     // MARK: - Yemek silme
     func deleteEntry(_ entry: FoodEntry) {
         modelContext.delete(entry)
